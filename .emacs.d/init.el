@@ -10,6 +10,12 @@
 (setq column-number-mode t) ;; show column number in mode bar
 (blink-cursor-mode 0) ;; turn off blinking cursor
 
+;; window keybindings
+(global-set-key (kbd "M-0") 'delete-window)
+(global-set-key (kbd "M-1") 'delete-other-windows)
+(global-set-key (kbd "M-2") 'split-window-vertically)
+(global-set-key (kbd "M-3") 'split-window-horizontally)
+
 ;; misc settings
 (setq-default backup-inhibited t) ;; no backups
 
@@ -46,3 +52,9 @@
 
 ;; opening files in an already-running instance of emacs:
 (server-start)
+
+;; start an edit server so Chrome can hook into emacs
+(require 'edit-server)
+(setq edit-server-new-frame nil)
+(edit-server-start)
+
