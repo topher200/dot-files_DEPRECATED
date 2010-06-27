@@ -6,6 +6,7 @@
 (define-key viper-vi-global-user-map "?" 'isearch-backward-regexp)
 
 ;; Enable vim-like window transitions
+(define-key global-map "\C-w\C-w" 'viper-cycle-windows)
 (define-key viper-vi-global-user-map "\C-wh" 'windmove-left)
 (define-key viper-vi-global-user-map "\C-wj" 'windmove-down)
 (define-key viper-vi-global-user-map "\C-wk" 'windmove-up)
