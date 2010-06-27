@@ -33,6 +33,11 @@
 (setq font-lock-maximum-decoration t)
 (setq case-fold-search t)
 (setq current-language-environment "Latin-1")
+(set-face-attribute 'default nil :height 100)
+
+;; color changes required for linux M-x shell
+(autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 ;; startup with vimpulse
 (require 'vimpulse)
@@ -45,7 +50,6 @@
 (partial-completion-mode 't)
 
 ;; org-mode settings
-;; startup with special indenting- don't show leading stars
 (setq org-hide-leading-stars t)
 
 ;; opening files in an already-running instance of emacs:
