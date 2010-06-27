@@ -26,7 +26,9 @@
 ;; failing my-font() silently if the font isn't installed
 (condition-case nil
   (my-font)
-  (error nil))
+  (error 
+    (message "Topher: init.el failed to load font. It probably isn't installed")
+  nil))
 (global-font-lock-mode t)
 (setq font-lock-maximum-decoration t)
 (setq case-fold-search t)
