@@ -46,12 +46,12 @@
   (my-font)
   (error 
     (message "Topher: init.el failed to load font. It probably isn't installed")
+    (set-face-attribute 'default nil :height 100)
   nil))
 (global-font-lock-mode t)
 (setq font-lock-maximum-decoration t)
 (setq case-fold-search t)
 (setq current-language-environment "Latin-1")
-(set-face-attribute 'default nil :height 100)
 
 ;; color changes required for linux M-x shell
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
