@@ -16,6 +16,18 @@
 (global-set-key (kbd "M-2") 'split-window-vertically)
 (global-set-key (kbd "M-3") 'split-window-horizontally)
 
+;; programming keybindings
+(global-set-key (kbd "<f6>") 'fs-lint)
+(global-set-key (kbd "<f7>") '(lambda () (interactive) (compile compile-command)))
+
+;; movement control
+(global-set-key(kbd "C-j") 'scroll-up)
+(global-set-key(kbd "C-k") 'scroll-down)
+(setq next-screen-context-lines 6)
+
+;; misc keybindings
+(global-set-key(kbd "C-s") 'save-buffer)
+
 ;; misc settings
 (setq-default backup-inhibited t) ;; no backups
 
@@ -58,3 +70,27 @@
 (setq edit-server-new-frame nil)
 (edit-server-start)
 
+;; c++-mode
+(add-to-list 'auto-mode-alist '("\\.cc$" . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.cpp$" . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.cxx$" . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.h$" . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.hh$" . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.hpp$" . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.hxx$" . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.idl$" . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.ipp$" . c++-mode))
+(require 'google-c-style)
+(add-hook 'c-mode-common-hook 'google-set-c-style)
+
+;; python-mode
+(add-to-list 'auto-mode-alist '("\\.py$" . python-mode))
+(add-to-list 'auto-mode-alist '("\\.pyw$" . python-mode))
+(add-to-list 'auto-mode-alist '("\\.pxd$" . python-mode))
+(add-to-list 'auto-mode-alist '("\\.pyx$" . python-mode))
+(setq python-indent 2)
+
+;; farsounder specific
+(require 'farsounder)
+(require 'sonasoft)
+(sonasoft-setup-compile)
