@@ -41,12 +41,21 @@
 ;; fonts
 (defun my-font () (interactive)
   (set-default-font "-outline-Crisp-normal-r-normal-normal-16-120-96-96-c-*-iso8859-1"))
-(my-font)
+;; failing my-font() silently if the font isn't installed
+(condition-case nil
+  (my-font)
+  (error 
+    (message "Topher: init.el failed to load font. It probably isn't installed")
+  nil))
 (global-font-lock-mode t)
 (setq font-lock-maximum-decoration t)
 (setq case-fold-search t)
 (setq current-language-environment "Latin-1")
-;; (setq current-input-method "latin-1-prefix") ; failing the vimpulse load
+(set-face-attribute 'default nil :height 100)
+
+;; color changes required for linux M-x shell
+(autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 ;; startup with vimpulse
 (require 'vimpulse)
@@ -59,7 +68,6 @@
 (partial-completion-mode 't)
 
 ;; org-mode settings
-;; startup with special indenting- don't show leading stars
 (setq org-hide-leading-stars t)
 
 ;; opening files in an already-running instance of emacs:
