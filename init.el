@@ -27,7 +27,6 @@
 
 ;; misc keybindings
 (global-set-key(kbd "C-s") 'save-buffer)
-(global-set-key[f1] 'shell-dwim)
 
 ;; misc settings
 (setq-default backup-inhibited t) ;; no backups
@@ -104,25 +103,3 @@
 (require 'farsounder)
 (require 'sonasoft)
 (sonasoft-setup-compile)
-
-;; function to switch create uniquely named shell buffers
-;; taken from http://www.emacswiki.org/emacs/ShellMode#toc4
-(defun shell-dwim (&optional create)
-  "Start or switch to an inferior shell process, in a smart way.
- If a buffer with a running shell process exists, simply switch to
- that buffer.
- If a shell buffer exists, but the shell process is not running,
- restart the shell.
- If already in an active shell buffer, switch to the next one, if
- any.
- With prefix argument CREATE always start a new shell."
-  (interactive "P")
-  (let* ((next-shell-buffer
-	  (catch 'found
-	    (dolist (buffer (reverse (buffer-list)))
-	      (when (string-match "^\\*shell\\*" (buffer-name buffer))
-		(throw 'found buffer)))))
-	 (buffer (if create
-		     (generate-new-buffer-name "*shell*")
-		   next-shell-buffer)))
-    (shell buffer)))
