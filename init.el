@@ -30,6 +30,7 @@
 
 ;; misc settings
 (setq-default backup-inhibited t) ;; no backups
+(global-auto-revert-mode) ;; automatically revert unmodified buffers that changed
 
 ;; colors
 (require 'color-theme)
@@ -101,4 +102,3 @@
 ;; farsounder specific
 (require 'farsounder)
 (require 'sonasoft)
-(sonasoft-setup-compile)
