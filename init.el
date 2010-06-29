@@ -102,3 +102,4 @@
 ;; farsounder specific
 (require 'farsounder)
 (require 'sonasoft)
+(sonasoft-setup-compile)
