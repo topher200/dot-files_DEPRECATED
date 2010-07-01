@@ -34,6 +34,10 @@
 (define-key viper-vi-global-user-map (kbd "n") 'isearch-repeat-forward)
 (define-key viper-vi-global-user-map (kbd "N") 'isearch-repeat-backward)
 
+;; viper settings
+(setq-default viper-auto-indent t)
+(setq-default viper-shift-width 2)
+
 ;; misc keybindings
 (global-set-key(kbd "C-s") 'save-buffer)
 
