@@ -1,6 +1,10 @@
 ;; path update
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp"))
 
+;; startup with vimpulse
+(require 'vimpulse)
+(setq viper-mode t)
+
 ;; gui settings
 (setq inhibit-startup-message t)
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
@@ -15,6 +19,11 @@
 (global-set-key (kbd "M-1") 'delete-other-windows)
 (global-set-key (kbd "M-2") 'split-window-vertically)
 (global-set-key (kbd "M-3") 'split-window-horizontally)
+;; Enable vim-like window transitions
+;; (global-set-key (kbd "C-w h") 'windmove-left)
+;; (global-set-key (kbd "C-w j") 'windmove-down)
+;; (global-set-key (kbd "C-w k") 'windmove-up)
+;; (global-set-key (kbd "C-w l") 'windmove-right)
 
 ;; programming keybindings
 (global-set-key (kbd "<f6>") 'fs-lint)
@@ -24,6 +33,11 @@
 (global-set-key(kbd "C-j") 'scroll-up)
 (global-set-key(kbd "C-k") 'scroll-down)
 (setq next-screen-context-lines 6)
+
+;; Enable vim-like searching
+(define-key viper-vi-global-user-map (kbd "/") 'isearch-forward)
+(define-key viper-vi-global-user-map (kbd "n") 'isearch-repeat-forward)
+(define-key viper-vi-global-user-map (kbd "N") 'isearch-repeat-backward)
 
 ;; misc keybindings
 (global-set-key(kbd "C-s") 'save-buffer)
@@ -57,10 +71,6 @@
 ;; color changes required for linux M-x shell
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
-
-;; startup with vimpulse
-(require 'vimpulse)
-(setq viper-mode t)
 
 ;; use ido mode
 (require 'ido)
