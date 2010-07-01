@@ -29,13 +29,9 @@
 (global-set-key(kbd "C-k") 'scroll-down)
 (setq next-screen-context-lines 6)
 
-;; Enable vim-like searching
-(define-key viper-vi-global-user-map (kbd "/") 'isearch-forward)
-(define-key viper-vi-global-user-map (kbd "n") 'isearch-repeat-forward)
-(define-key viper-vi-global-user-map (kbd "N") 'isearch-repeat-backward)
-
 ;; viper settings
 (setq-default viper-auto-indent t)
+(setq-default viper-case-fold-search t) ;; case-insensitive search
 (setq-default viper-shift-width 2)
 
 ;; misc keybindings
