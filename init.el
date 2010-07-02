@@ -40,6 +40,7 @@
 ;; misc settings
 (setq-default backup-inhibited t) ;; no backups
 (global-auto-revert-mode) ;; automatically revert unmodified buffers that changed
+(fset 'yes-or-no-p 'y-or-n-p) ;; make all yes/no questions y/n
 
 ;; colors
 (require 'color-theme)
