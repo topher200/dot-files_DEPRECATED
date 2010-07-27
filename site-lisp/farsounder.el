@@ -21,7 +21,7 @@ Works with C++ and python files."
 
 "))
    ((eq major-mode 'python-mode)
-    (insert "\"\"\"TODO(evan) add description
+    (insert "\"\"\"TODO(topher) add description
 \"\"\"
 
 __author__ = \"$LastChangedBy$\"
