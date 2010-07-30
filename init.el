@@ -9,16 +9,19 @@
 (setq inhibit-startup-message t)
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (set-default 'truncate-lines t) ;; stop word wrap
 (setq visible-bell t) ;; stop viper-mode from making noise
 (setq column-number-mode t) ;; show column number in mode bar
 (blink-cursor-mode 0) ;; turn off blinking cursor
+(fringe-mode '(0 . 0))  ; == minimal (not sure why 'minimal doesn't work)
 
 ;; window keybindings
 (global-set-key (kbd "M-0") 'delete-window)
 (global-set-key (kbd "M-1") 'delete-other-windows)
 (global-set-key (kbd "M-2") 'split-window-vertically)
 (global-set-key (kbd "M-3") 'split-window-horizontally)
+(global-set-key (kbd "M-=") 'balance-windows)
 
 ;; programming keybindings
 (global-set-key (kbd "<f6>") 'fs-lint)
@@ -109,3 +112,8 @@
 (require 'farsounder)
 (require 'sonasoft)
 (sonasoft-setup-compile)
+
+;; topher- remove this?
+(autoload 'python-mode "python-mode" "Python Mode." t)
+(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
+(add-to-list 'interpreter-mode-alist '("python" . python-mode))
