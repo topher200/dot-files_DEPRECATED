@@ -93,6 +93,9 @@
 (setq edit-server-new-frame nil)
 (edit-server-start)
 
+;; use mercurial.el
+(require 'mercurial)
+
 ;; c++-mode
 (add-to-list 'auto-mode-alist '("\\.cc$" . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.cpp$" . c++-mode))
