@@ -77,6 +77,11 @@
 (setq ido-enable-flex-matching t) ;; enable fuzzy matching
 (partial-completion-mode 't)
 
+;; use smex mode (ido for M-x)
+(require 'smex)
+(smex-initialize)
+(global-set-key (kbd "M-x") 'smex)
+
 ;; org-mode settings
 (setq org-hide-leading-stars t)
 
