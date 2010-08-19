@@ -103,6 +103,10 @@
 (define-key viper-vi-global-user-map "u" 'undo-tree-undo)
 (define-key viper-vi-global-user-map "U" 'undo-tree-redo)
 
+;; use goto-last-change
+(require 'goto-last-change)
+(define-key viper-vi-global-user-map "g;" 'goto-last-change)
+
 ;; c++-mode
 (add-to-list 'auto-mode-alist '("\\.cc$" . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.cpp$" . c++-mode))
