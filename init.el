@@ -44,6 +44,7 @@
 (setq-default backup-inhibited t) ;; no backups
 (global-auto-revert-mode) ;; automatically revert unmodified buffers that changed
 (fset 'yes-or-no-p 'y-or-n-p) ;; make all yes/no questions y/n
+(desktop-save-mode 1) ;; restore emacs state on startup
 
 ;; colors
 (require 'color-theme)
@@ -95,6 +96,12 @@
 
 ;; use mercurial.el
 (require 'mercurial)
+
+;; use undo-tree instead of the standard undo
+(require 'undo-tree)
+(global-undo-tree-mode)
+(define-key viper-vi-global-user-map "u" 'undo-tree-undo)
+(define-key viper-vi-global-user-map "U" 'undo-tree-redo)
 
 ;; c++-mode
 (add-to-list 'auto-mode-alist '("\\.cc$" . c++-mode))
