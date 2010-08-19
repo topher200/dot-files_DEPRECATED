@@ -94,9 +94,6 @@
 (setq edit-server-new-frame nil)
 (edit-server-start)
 
-;; use mercurial.el
-(require 'mercurial)
-
 ;; use undo-tree instead of the standard undo
 (require 'undo-tree)
 (global-undo-tree-mode)
