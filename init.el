@@ -89,7 +89,7 @@
 
 ;; keyboard shortcuts for org-mode in viper-mode
 (defun org-viper ()
-  (viper-add-local-keys 'vi-state 
+  (vimpulse-add-local-keys 'vi-state 
 	'(("o" . org-insert-heading-respect-content))
 	))
 
