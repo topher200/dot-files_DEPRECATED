@@ -90,7 +90,7 @@
 ;; keyboard shortcuts for org-mode in viper-mode
 (defun org-viper ()
   (vimpulse-add-local-keys 'vi-state 
-	'(("o" . org-insert-heading-respect-content))
+	'(("o" lambda () (interactive) (org-insert-heading-respect-content)))
 	))
 
 ;; opening files in an already-running instance of emacs:
