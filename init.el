@@ -85,13 +85,6 @@
 
 ;; org-mode settings
 (setq org-hide-leading-stars t)
-(add-hook 'org-mode-hook 'org-viper)
-
-;; keyboard shortcuts for org-mode in viper-mode
-(defun org-viper ()
-  (vimpulse-add-local-keys 'vi-state 
-	'(("o" lambda () (interactive) (org-insert-heading-respect-content)))
-	))
 
 ;; opening files in an already-running instance of emacs:
 (server-start)
