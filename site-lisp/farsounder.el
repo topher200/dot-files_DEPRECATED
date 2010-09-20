@@ -11,7 +11,7 @@ Works with C++ and python files."
   (goto-char (point-min))
   (cond
    ((eq major-mode 'c++-mode)
-    (insert "// TODO(evan) project name
+    (insert "// TODO(topher) project name
 // Copyright 2001-2010 FarSounder Inc.  All rights reserved.
 // For internal use only. See NOTICE.txt for details.
 //
