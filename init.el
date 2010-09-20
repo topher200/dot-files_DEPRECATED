@@ -103,6 +103,9 @@
 (require 'goto-last-change)
 (define-key viper-vi-global-user-map "g;" 'goto-last-change)
 
+;; use ack-mode
+(require 'ack)
+
 ;; c++-mode
 (add-to-list 'auto-mode-alist '("\\.cc$" . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.cpp$" . c++-mode))
