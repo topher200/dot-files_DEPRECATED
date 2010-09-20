@@ -85,7 +85,6 @@
 
 ;; org-mode settings
 (setq org-hide-leading-stars t)
-
 ;; opening files in an already-running instance of emacs:
 (server-start)
 
