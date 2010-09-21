@@ -26,6 +26,7 @@
 ;; programming keybindings
 (global-set-key (kbd "<f6>") 'fs-lint)
 (global-set-key (kbd "<f7>") '(lambda () (interactive) (compile compile-command)))
+(global-set-key(kbd "C-s") 'save-buffer)
 
 ;; movement control
 (global-set-key(kbd "C-j") 'scroll-up)
@@ -36,9 +37,6 @@
 (setq-default viper-auto-indent t)
 (setq-default viper-case-fold-search t) ;; case-insensitive search
 (setq-default viper-shift-width 2)
-
-;; misc keybindings
-(global-set-key(kbd "C-s") 'save-buffer)
 
 ;; misc settings
 (setq-default backup-inhibited t) ;; no backups
