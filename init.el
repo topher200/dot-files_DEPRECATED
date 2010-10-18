@@ -83,8 +83,6 @@
 
 ;; org-mode settings
 (setq org-hide-leading-stars t)
-;; opening files in an already-running instance of emacs:
-(server-start)
 
 ;; start an edit server so Chrome can hook into emacs
 (require 'edit-server)
