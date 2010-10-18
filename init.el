@@ -52,15 +52,6 @@
 (set-cursor-color "red")
 
 ;; fonts
-(defun my-font () (interactive)
-  (set-default-font "-outline-Crisp-normal-r-normal-normal-16-120-96-96-c-*-iso8859-1"))
-;; failing my-font() silently if the font isn't installed
-(condition-case nil
-  (my-font)
-  (error 
-    (message "Topher: init.el failed to load font. It probably isn't installed")
-    (set-face-attribute 'default nil :height 100)
-  nil))
 (global-font-lock-mode t)
 (setq font-lock-maximum-decoration t)
 (setq case-fold-search t)
