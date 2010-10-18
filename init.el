@@ -24,7 +24,6 @@
 (global-set-key (kbd "M-=") 'balance-windows)
 
 ;; programming keybindings
-(global-set-key (kbd "<f6>") 'fs-lint)
 (global-set-key (kbd "<f7>") '(lambda () (interactive) (compile compile-command)))
 (global-set-key(kbd "C-s") 'save-buffer)
 
@@ -112,8 +111,3 @@
 (add-to-list 'auto-mode-alist '("\\.pxd$" . python-mode))
 (add-to-list 'auto-mode-alist '("\\.pyx$" . python-mode))
 (setq python-indent 2)
-
-;; farsounder specific
-(require 'farsounder)
-(require 'sonasoft)
-(sonasoft-setup-compile)
