@@ -51,6 +51,7 @@
 (set-cursor-color "red")
 
 ;; fonts
+(set-face-attribute 'default nil :height 100)
 (global-font-lock-mode t)
 (setq font-lock-maximum-decoration t)
 (setq case-fold-search t)
