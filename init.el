@@ -30,7 +30,6 @@
 ;; movement control
 (global-set-key(kbd "C-j") 'scroll-up)
 (global-set-key(kbd "C-k") 'scroll-down)
-(setq next-screen-context-lines 6)
 
 ;; viper settings
 (setq-default viper-auto-indent t)
