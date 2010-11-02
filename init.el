@@ -110,3 +110,6 @@
 (add-to-list 'auto-mode-alist '("\\.pxd$" . python-mode))
 (add-to-list 'auto-mode-alist '("\\.pyx$" . python-mode))
 (setq python-indent 2)
+
+;; topher-specific
+(require 'topher-functions)
