@@ -26,9 +26,7 @@
 ;; programming keybindings
 (global-set-key(kbd "C-s") 'save-buffer)
 ;; run the check/compile for the current language
-(define-key python-mode-map (kbd "<f7>") 'python-check)
-(define-key c++-mode-map (kbd "<f7>")
-  '(lambda () (interactive) (compile compile-command)))
+(global-set-key(kbd "<f7>") 'check-syntax)
 
 ;; movement control
 (global-set-key(kbd "C-j") 'scroll-up)
