@@ -40,7 +40,7 @@
 ;; misc settings
 (setq-default backup-inhibited t) ;; no backups
 (setq auto-save-default nil) ;; no autosave
-(global-auto-revert-mode t) ;; automatically revert unmodified buffers that changed
+(setq global-auto-revert-mode t) ;; automatically revert unmodified buffers that changed
 (fset 'yes-or-no-p 'y-or-n-p) ;; make all yes/no questions y/n
 (desktop-save-mode 1) ;; restore emacs state on startup
 
