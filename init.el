@@ -19,8 +19,8 @@
 ;; window keybindings
 (global-set-key (kbd "M-0") 'delete-window)
 (global-set-key (kbd "M-1") 'delete-other-windows)
-(global-set-key (kbd "M-2") 'split-window-vertically)
-(global-set-key (kbd "M-3") 'split-window-horizontally)
+(global-set-key (kbd "M-s") 'split-window-vertically)
+(global-set-key (kbd "M-h") 'split-window-horizontally)
 (global-set-key (kbd "M-=") 'balance-windows)
 
 ;; programming keybindings
@@ -116,3 +116,7 @@
 
 ;; topher-specific
 (require 'topher-functions)
+
+;; override viper-keybinding for C-t to open Chrome
+(define-key viper-vi-global-user-map(kbd "C-t")
+  (lambda () (interactive)(browse-url "www.google.com")(message "hi!")))
