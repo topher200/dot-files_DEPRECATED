@@ -109,6 +109,9 @@
 (add-to-list 'auto-mode-alist '("\\.pyx$" . python-mode))
 (setq python-indent 2)
 
+;; clojure-mode
+(require 'clojure-mode)
+
 ;; topher-specific
 (require 'topher-functions)
 
