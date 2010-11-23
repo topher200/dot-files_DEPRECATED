@@ -116,6 +116,12 @@
 
 ;; clojure-mode
 (require 'clojure-mode)
+;; slime support
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp/slime"))
+(eval-after-load "slime" 
+  '(progn (slime-setup '(slime-repl))))
+(require 'slime)
+(slime-setup)
 
 ;; topher-specific
 (require 'topher-functions)
