@@ -19,8 +19,8 @@
 ;; window keybindings
 (global-set-key (kbd "M-0") 'delete-window)
 (global-set-key (kbd "M-1") 'delete-other-windows)
-(global-set-key (kbd "M-s") 'split-window-vertically)
-(global-set-key (kbd "M-h") 'split-window-horizontally)
+(global-set-key (kbd "M-s") 'split-window-horizontally)
+(global-set-key (kbd "M-v") 'split-window-vertically)
 (global-set-key (kbd "M-=") 'balance-windows)
 
 ;; programming keybindings
