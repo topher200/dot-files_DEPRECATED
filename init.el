@@ -19,8 +19,8 @@
 ;; window keybindings
 (global-set-key (kbd "M-0") 'delete-window)
 (global-set-key (kbd "M-1") 'delete-other-windows)
-(global-set-key (kbd "M-s") 'split-window-vertically)
-(global-set-key (kbd "M-h") 'split-window-horizontally)
+(global-set-key (kbd "M-s") 'split-window-horizontally)
+(global-set-key (kbd "M-v") 'split-window-vertically)
 (global-set-key (kbd "M-=") 'balance-windows)
 
 ;; programming keybindings
@@ -40,7 +40,7 @@
 ;; misc settings
 (setq-default backup-inhibited t) ;; no backups
 (setq auto-save-default nil) ;; no autosave
-(setq global-auto-revert-mode t) ;; automatically revert unmodified buffers that changed
+(global-auto-revert-mode) ;; automatically revert unmodified buffers that changed
 (fset 'yes-or-no-p 'y-or-n-p) ;; make all yes/no questions y/n
 (desktop-save-mode 1) ;; restore emacs state on startup
 
