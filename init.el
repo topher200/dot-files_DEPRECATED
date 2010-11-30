@@ -122,6 +122,9 @@
 (require 'slime)
 (slime-setup)
 
+;; evan functions: google()
+(require 'evan-functions)
+
 ;; topher-specific
 (require 'topher-functions)
 
