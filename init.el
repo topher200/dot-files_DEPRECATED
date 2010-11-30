@@ -48,8 +48,7 @@
 (require 'color-theme)
 (color-theme-initialize)
 (setq color-theme-is-global t)
-(color-theme-katester)
-(set-cursor-color "red")
+(color-theme-greiner2)
 
 ;; fonts
 (global-font-lock-mode t)
