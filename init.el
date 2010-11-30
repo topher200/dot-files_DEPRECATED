@@ -48,8 +48,7 @@
 (require 'color-theme)
 (color-theme-initialize)
 (setq color-theme-is-global t)
-(color-theme-katester)
-(set-cursor-color "red")
+(color-theme-greiner2)
 
 ;; fonts
 (set-face-attribute 'default nil :height 100)
@@ -93,6 +92,11 @@
 
 ;; use ack-mode
 (require 'ack)
+
+;; use w3m
+(add-to-list 'load-path "~/.emacs.d/site-lisp/w3m")
+(require 'w3m-ems)
+(require 'w3m)
 
 ;; c++-mode
 (add-to-list 'auto-mode-alist '("\\.cc$" . c++-mode))
