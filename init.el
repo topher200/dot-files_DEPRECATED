@@ -1,6 +1,10 @@
 ;; path update
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp"))
 
+;; Variables configured via 'customize' interface
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file)
+
 ;; startup with vimpulse
 (require 'vimpulse)
 (setq viper-mode t)
