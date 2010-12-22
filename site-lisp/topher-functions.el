@@ -4,7 +4,7 @@
   (save-excursion
     (dolist(buffer (buffer-list))
       (set-buffer buffer)
-      (if (string-match "\\*.*\\*" (buffer-name buffer))
+      (if (string-match "^\\*" (buffer-name buffer))
 					(kill-buffer buffer)))))
 
 (defun check-syntax ()
