@@ -4,8 +4,10 @@
   (save-excursion
     (dolist(buffer (buffer-list))
       (set-buffer buffer)
-      (if (string-match "\\*.*\\*" (buffer-name buffer))
-	(kill-buffer buffer)))))
+      (if (string-match "^\\*" (buffer-name buffer))
+					(progn
+						(message (concat "Killing buffer: " (buffer-name buffer)))
+						(kill-buffer buffer))))))
 
 (defun check-syntax ()
   "Checks the syntax for the current language best way it knows how"
