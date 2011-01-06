@@ -47,6 +47,7 @@
 (global-auto-revert-mode) ;; revert unmodified buffers that changed on disk
 (fset 'yes-or-no-p 'y-or-n-p) ;; make all yes/no questions y/n
 (desktop-save-mode 1) ;; restore emacs state on startup
+(setq-default indent-tabs-mode nil) ;; use spaces, never tabs for indenting
 
 ;; colors
 (require 'color-theme)
