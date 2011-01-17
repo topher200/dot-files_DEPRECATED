@@ -134,4 +134,4 @@
 
 ;; override viper-keybinding for C-t to open Chrome
 (define-key viper-vi-global-user-map(kbd "C-t")
-  (lambda () (interactive)(browse-url "www.google.com")(message "hi!")))
+  (lambda () (interactive)(browse-url "www.google.com")))
