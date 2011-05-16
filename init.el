@@ -26,6 +26,7 @@
 (global-set-key (kbd "M-s") 'split-window-horizontally)
 (global-set-key (kbd "M-v") 'split-window-vertically)
 (global-set-key (kbd "M-=") 'balance-windows)
+(global-set-key (kbd "C-<tab>") 'other-window)
 
 ;; programming keybindings
 (global-set-key(kbd "C-s") 'save-buffer)
