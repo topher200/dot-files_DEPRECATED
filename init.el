@@ -26,6 +26,7 @@
 (global-set-key (kbd "M-s") 'split-window-horizontally)
 (global-set-key (kbd "M-v") 'split-window-vertically)
 (global-set-key (kbd "M-=") 'balance-windows)
+(global-set-key (kbd "C-<tab>") 'other-window)
 
 ;; programming keybindings
 (global-set-key(kbd "C-s") 'save-buffer)
@@ -71,6 +72,7 @@
 (ido-mode t)
 (setq ido-enable-flex-matching t) ;; enable fuzzy matching
 (partial-completion-mode 't)
+(setq ido-default-buffer-method 'selected-window)
 
 ;; use smex mode (ido for M-x)
 (require 'smex)
