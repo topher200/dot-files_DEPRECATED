@@ -49,6 +49,7 @@
 (fset 'yes-or-no-p 'y-or-n-p) ;; make all yes/no questions y/n
 (desktop-save-mode 1) ;; restore emacs state on startup
 (setq-default indent-tabs-mode nil) ;; use spaces, never tabs for indenting
+(setq x-select-enable-clipboard t) ;; copy/paste uses X's clipboard
 
 ;; colors
 (require 'color-theme)
