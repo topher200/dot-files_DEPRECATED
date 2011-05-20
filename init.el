@@ -62,6 +62,11 @@
 (setq case-fold-search t)
 (setq current-language-environment "Latin-1")
 
+;; uniquify
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'reverse)
+(setq uniquify-separator "|")
+
 ;; use ido mode
 (require 'ido)
 (ido-mode t)
