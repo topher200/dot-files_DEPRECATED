@@ -64,9 +64,15 @@
 (setq case-fold-search t)
 (setq current-language-environment "Latin-1")
 
+
 ;; color changes required for linux M-x shell
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+
+;; uniquify
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'reverse)
+(setq uniquify-separator "|")
 
 ;; use ido mode
 (require 'ido)
