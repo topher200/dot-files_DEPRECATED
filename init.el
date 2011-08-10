@@ -122,6 +122,8 @@
 
 ;; clojure-mode
 (require 'clojure-mode)
+(add-to-list 'auto-mode-alist '("\\.clj$" . clojure-mode))
+
 ;; slime support
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp/slime"))
 (eval-after-load "slime" 
