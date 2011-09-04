@@ -26,7 +26,6 @@
 (global-set-key (kbd "M-s") 'split-window-horizontally)
 (global-set-key (kbd "M-v") 'split-window-vertically)
 (global-set-key (kbd "M-=") 'balance-windows)
-(global-set-key (kbd "C-<tab>") 'other-window)
 
 ;; programming keybindings
 (global-set-key(kbd "C-s") 'save-buffer)
@@ -147,3 +146,10 @@
 ;; override viper-keybinding for C-t to open Chrome
 (define-key viper-vi-global-user-map(kbd "C-t")
   (lambda () (interactive)(browse-url "www.google.com")))
+
+(defvar my-keys-minor-mode-map (make-keymap))
+(define-key my-keys-minor-mode-map (kbd "C-<tab>") 'next-multiframe-window)
+(define-key my-keys-minor-mode-map (kbd "C-S-<tab>")
+  'previous-multiframe-window)
+(define-minor-mode my-keys-minor-mode t 'my-keys-minor-mode-map)
+(my-keys-minor-mode 1)
