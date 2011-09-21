@@ -34,16 +34,14 @@
 
 ;; movement control
 ;; attempts to keep cursor in the middle of the screen while scrolling
-(global-set-key (kbd "C-j")
-                (lambda () (interactive)
-                  (call-interactively 'viper-line-to-middle)
-                  (call-interactively 'scroll-up)
-                  (call-interactively 'viper-window-middle)))
-(global-set-key (kbd "C-k")
-                (lambda () (interactive)
-                  (call-interactively 'viper-line-to-middle)
-                  (call-interactively 'scroll-down)
-                  (call-interactively 'viper-window-middle)))
+(defun move-and-center (scroll-function)
+  (call-interactively 'viper-line-to-middle)
+  (call-interactively scroll-function)
+  (call-interactively 'viper-window-middle))
+(global-set-key (kbd "C-j") (lambda () (interactive)
+                              (move-and-center 'scroll-up)))
+(global-set-key (kbd "C-k") (lambda () (interactive)
+                              (move-and-center 'scroll-down)))
 
 ;; viper settings
 (setq-default viper-auto-indent t)
