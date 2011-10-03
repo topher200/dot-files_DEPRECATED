@@ -15,7 +15,7 @@
   (cond
    ((eq major-mode 'c++-mode) (compile compile-command))
    ((eq major-mode 'python-mode)
-    (python-check (concat "pychecker --stdlib " buffer-file-name)))
+    (python-check (concat "pychecker --stdlib --limit 50 " buffer-file-name)))
    (t (message "Don't know which checker to use."))))
 
 
