@@ -11,4 +11,18 @@ web browser depending on user input."
         (w3m (concat "http://www.google.com/search?q=" query))
       (browse-url (concat "http://www.google.com/search?q=" query)))))
 
+(defun toc ()
+  "Poor man's table of contents for the current python/lisp buffer."
+  (interactive)
+  (cond
+   ((eq major-mode 'c++-mode)
+    (lgrep "^[A-Za-z0-9_]* \\?[A-Za-z0-9_*&]\\+ [A-Za-z0-9_]*::[A-Za-z0-9_]* \\?("
+           (buffer-name) ""))
+   ((eq major-mode 'emacs-lisp-mode)
+    (lgrep "^ *(\\(defcustom\\|defun\\|defgroup\\) [A-Za-z0-9_-]*" (buffer-name) ""))
+   ((eq major-mode 'python-mode)
+    (grep (concat "grep -n \"^ *\\(def\\|class\\) [A-Za-z0-9_]*\" "
+                  (buffer-name) "")))
+   (t (message "Don't know how to do TOC for this buffer!"))))
+
 (provide 'evan-functions)
