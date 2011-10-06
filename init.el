@@ -92,6 +92,9 @@
 (smex-initialize)
 (global-set-key (kbd "M-x") 'smex)
 
+;; provide keep-end mode (keeps cursor at end of buffer)
+(require 'keep-end)
+
 ;; org-mode settings
 (setq org-hide-leading-stars t)
 
