@@ -113,8 +113,16 @@
 (require 'goto-last-change)
 (define-key viper-vi-global-user-map "g;" 'goto-last-change)
 
-;; use ack-mode
-(require 'ack)
+;; use grin-mode
+(require 'grin)
+
+;; set up tags support
+(require 'etags-select)
+(global-set-key (kbd "M-.") 'etags-select-find-tag)
+(global-set-key (kbd "M-?") 'etags-select-find-tag-at-point)
+
+;; set up hippie-expand. match C-n from Vim
+(global-set-key "\C-n" 'hippie-expand)
 
 ;; c++-mode
 (add-to-list 'auto-mode-alist '("\\.cc$" . c++-mode))
