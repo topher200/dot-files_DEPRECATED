@@ -115,7 +115,7 @@
 (global-set-key (kbd "M-?") 'etags-select-find-tag-at-point)
 
 ;; set up hippie-expand. match C-n from Vim
-(global-set-key "\C-n" 'hippie-expand)
+(define-key viper-insert-global-user-map "\C-n" 'hippie-expand)
 
 ;; c++-mode
 (add-to-list 'auto-mode-alist '("\\.cc$" . c++-mode))
