@@ -51,7 +51,7 @@
 ;; misc settings
 (setq-default backup-inhibited t) ;; no backups
 (setq auto-save-default nil) ;; no autosave
-(global-auto-revert-mode) ;; revert unmodified buffers that changed on disk
+(global-auto-revert-mode 1) ;; revert unmodified buffers that changed on disk
 (fset 'yes-or-no-p 'y-or-n-p) ;; make all yes/no questions y/n
 (desktop-save-mode 1) ;; restore emacs state on startup
 (setq-default indent-tabs-mode nil) ;; use spaces, never tabs for indenting
