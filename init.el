@@ -32,17 +32,6 @@
 ;; run the check/compile for the current language
 (global-set-key(kbd "<f7>") 'check-syntax)
 
-;; movement control
-;; attempts to keep cursor in the middle of the screen while scrolling
-(defun move-and-center (scroll-function)
-  (call-interactively 'viper-line-to-middle)
-  (call-interactively scroll-function)
-  (call-interactively 'viper-window-middle))
-(global-set-key (kbd "C-j") (lambda () (interactive)
-                              (move-and-center 'scroll-up)))
-(global-set-key (kbd "C-k") (lambda () (interactive)
-                              (move-and-center 'scroll-down)))
-
 ;; viper settings
 (setq-default viper-auto-indent t)
 (setq-default viper-case-fold-search t) ;; case-insensitive search
@@ -158,7 +147,18 @@
 (define-key viper-vi-global-user-map(kbd "C-t")
   (lambda () (interactive)(browse-url "www.google.com")))
 
+;; movement control
+;; attempts to keep cursor in the middle of the screen while scrolling
+(defun move-and-center (scroll-function)
+  (call-interactively 'viper-line-to-middle)
+  (call-interactively scroll-function)
+  (call-interactively 'viper-window-middle))
+
 (defvar my-keys-minor-mode-map (make-keymap))
+(define-key my-keys-minor-mode-map (kbd "C-j")
+  (lambda () (interactive) (move-and-center 'scroll-up)))
+(define-key my-keys-minor-mode-map (kbd "C-k")
+  (lambda () (interactive) (move-and-center 'scroll-down)))
 (define-key my-keys-minor-mode-map (kbd "C-<tab>") 'next-multiframe-window)
 (define-key my-keys-minor-mode-map (kbd "C-S-<tab>")
   'previous-multiframe-window)
