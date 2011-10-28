@@ -18,5 +18,20 @@
     (python-check (concat "pychecker --stdlib --limit 50 " buffer-file-name)))
    (t (message "Don't know which checker to use."))))
 
+;; Toggle sticky window dedication
+(defun toggle-sticky-window ()
+  "Toggle whether the current active window is stickied or not.
+  Taken from http://stackoverflow.com/questions/43765/pin-emacs-buffers-to-windows-for-cscope/65992#65992
+  "
+  (interactive)
+  (message 
+   (if (let
+           (window (get-buffer-window (current-buffer)))
+         (set-window-dedicated-p window 
+                                 (not (window-dedicated-p window))))
+       "Window '%s' is stickied!"
+     "Window '%s' is un-stickied")
+   (current-buffer)))
+
 
 (provide 'topher-functions)
