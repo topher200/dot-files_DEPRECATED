@@ -174,5 +174,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-<tab>") 'next-multiframe-window)
 (define-key my-keys-minor-mode-map (kbd "C-S-<tab>")
   'previous-multiframe-window)
+(define-key my-keys-minor-mode-map (kbd "C-S-<iso-lefttab>")
+  'previous-multiframe-window)  ;; linux laptop
 (define-minor-mode my-keys-minor-mode t 'my-keys-minor-mode-map)
 (my-keys-minor-mode 1)
