@@ -5,6 +5,9 @@
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
+;; use goto-last-change. loading before evil so it maps it
+(require 'goto-last-change)
+
 ;; startup with evil (viper-mode updated)
 (setq-default evil-shift-width 2)
 (add-to-list 'load-path "~/.emacs.d/site-lisp/evil")
