@@ -152,6 +152,13 @@
 (require 'sonasoft)
 (sonasoft-setup-compile)
 
+;; movement control
+;; attempts to keep cursor in the middle of the screen while scrolling
+(defun move-and-center (scroll-function)
+  (call-interactively 'evil-scroll-line-to-center)
+  (call-interactively scroll-function)
+  (call-interactively 'evil-window-middle))
+
 (defvar my-keys-minor-mode-map (make-keymap))
 ;; Scroll up and down with Ctrl-j/k
 (define-key my-keys-minor-mode-map (kbd "C-j")
