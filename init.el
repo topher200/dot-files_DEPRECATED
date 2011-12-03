@@ -181,5 +181,7 @@
   'previous-multiframe-window)  ;; linux laptop
 ;; stop emacs from calling suspend-frame on Ctrl-x Ctrl-z
 (define-key my-keys-minor-mode-map (kbd "C-x C-z") 'no-op)
+(define-key my-keys-minor-mode-map (kbd "C-t")
+  (lambda () (interactive) (browse-url "www.google.com")))
 (define-minor-mode my-keys-minor-mode t 'my-keys-minor-mode-map)
 (my-keys-minor-mode 1)
