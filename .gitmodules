@@ -1,3 +1,6 @@
 [submodule "site-lisp/pianobar"]
 	path = site-lisp/pianobar
 	url = git@github.com:topher200/pianobar.el.git
+[submodule "site-lisp/evil"]
+	path = site-lisp/evil
+	url = git://gitorious.org/evil/evil.git

@@ -5,9 +5,11 @@
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
-;; startup with vimpulse
-(require 'vimpulse)
-(setq viper-mode t)
+;; startup with evil (viper-mode updated)
+(setq-default evil-shift-width 2)
+(add-to-list 'load-path "~/.emacs.d/site-lisp/evil")
+(require 'evil)  
+(evil-mode 1)
 
 ;; gui settings
 (setq inhibit-startup-message t)
