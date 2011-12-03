@@ -126,17 +126,17 @@
 (add-to-list 'auto-mode-alist '("\\.pyx$" . python-mode))
 (setq python-indent 2)
 
-;; clojure-mode
-(require 'clojure-mode)
-(add-to-list 'auto-mode-alist '("\\.clj$" . clojure-mode))
-(require 'clojure-test-mode)
-
 ;; slime support
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp/slime"))
 (eval-after-load "slime" 
   '(progn (slime-setup '(slime-repl))))
 (require 'slime)
 (slime-setup)
+
+;; clojure-mode
+(require 'clojure-mode)
+(add-to-list 'auto-mode-alist '("\\.clj$" . clojure-mode))
+(require 'clojure-test-mode)
 
 ;; pianobar.el
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp/pianobar"))
