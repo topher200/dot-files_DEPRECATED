@@ -152,6 +152,11 @@
 (require 'sonasoft)
 (sonasoft-setup-compile)
 
+;; set up hippie-expand. match C-n from Vim
+(define-key evil-insert-state-map (kbd "C-n") 'hippie-expand)
+(define-key evil-insert-state-map (kbd "C-S-n") 
+  (lambda () (interactive) (hippie-expand -1)))
+
 ;; movement control
 ;; attempts to keep cursor in the middle of the screen while scrolling
 (defun move-and-center (scroll-function)
