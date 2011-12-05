@@ -160,6 +160,9 @@
 (define-key evil-insert-state-map (kbd "C-S-n") 
   (lambda () (interactive) (hippie-expand -1)))
 
+;; bind RET (mostly in insert mode) to newline and indent
+(global-set-key (kbd "RET") 'newline-and-indent)
+
 ;; movement control
 ;; attempts to keep cursor in the middle of the screen while scrolling
 (defun move-and-center (scroll-function)
