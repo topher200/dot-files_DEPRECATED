@@ -167,14 +167,18 @@
   (call-interactively 'viper-window-middle))
 
 (defvar my-keys-minor-mode-map (make-keymap))
+;; Scroll up and down with Ctrl-j/k
 (define-key my-keys-minor-mode-map (kbd "C-j")
   (lambda () (interactive) (move-and-center 'scroll-up)))
 (define-key my-keys-minor-mode-map (kbd "C-k")
   (lambda () (interactive) (move-and-center 'scroll-down)))
+;; move between windows with Ctrl-Tab
 (define-key my-keys-minor-mode-map (kbd "C-<tab>") 'next-multiframe-window)
 (define-key my-keys-minor-mode-map (kbd "C-S-<tab>")
   'previous-multiframe-window)
 (define-key my-keys-minor-mode-map (kbd "C-S-<iso-lefttab>")
   'previous-multiframe-window)  ;; linux laptop
+;; stop emacs from calling suspend-frame on Ctrl-x Ctrl-z
+(define-key my-keys-minor-mode-map (kbd "C-x C-z") 'no-op)
 (define-minor-mode my-keys-minor-mode t 'my-keys-minor-mode-map)
 (my-keys-minor-mode 1)

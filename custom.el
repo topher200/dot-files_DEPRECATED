@@ -4,6 +4,7 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  '(fill-column 78)
+ '(hippie-expand-try-functions-list (quote (try-expand-dabbrev try-expand-dabbrev-visible try-expand-dabbrev-from-kill try-complete-file-name-partially try-expand-dabbrev-all-buffers try-complete-lisp-symbol-partially try-expand-line)))
  '(ido-enable-tramp-completion nil)
  '(tab-width 2)
  '(tramp-mode nil)
