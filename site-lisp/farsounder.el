@@ -12,7 +12,7 @@ Works with C++ and python files."
   (cond
    ((eq major-mode 'c++-mode)
     (insert "// TODO(topher) project name
-// Copyright 2001-2010 FarSounder Inc.  All rights reserved.
+// Copyright 2001-2011 FarSounder Inc.  All rights reserved.
 // For internal use only. See NOTICE.txt for details.
 //
 // $LastChangedBy$
@@ -44,11 +44,6 @@ __notice__ = \"For internal use only. See NOTICE.txt for details.\"
   (when fs-linter
     (compilation-start (concat fs-linter " \"" buffer-file-name "\"")
                        nil (lambda (mode) "*lint*"))))
-
-(defun fs-notes ()
-  "Open my FarSounder notes file."
-  (interactive)
-  (find-file "//providence/USERS/Evan.Lapisky/notes.org"))
 
 (defun fs-wiki (page)
   "Open a page in the FarSounder wiki. Results are shown in a w3m

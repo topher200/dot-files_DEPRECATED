@@ -14,12 +14,12 @@
   :type 'string
   :group 'sonasoft)
 
-(defcustom sonasoft-root "d:/sonasoft/src"
+(defcustom sonasoft-root "d:/dev/sonasoft/src"
   "SonaSoft src root directory. Used when setting up `compile-command'."
   :type 'string
   :group 'sonasoft)
 
-(defcustom sonasoft-visualstudio  "\"c:/Program Files/Microsoft Visual Studio 9.0/Common7/IDE/devenv.com\""
+(defcustom sonasoft-visualstudio  "\"c:/Program Files (x86)/Microsoft Visual Studio 9.0/Common7/IDE/devenv.com\""
   "Visual studio binary to build with. Used by `compile'."
   :type 'string
   :group 'sonasoft)

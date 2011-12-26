@@ -29,7 +29,7 @@
 
 ;; programming keybindings
 (global-set-key(kbd "C-s") 'save-buffer)
-;; run the check/compile for the current language
+(global-set-key(kbd "<f6>") 'fs-lint)
 (global-set-key(kbd "<f7>") 'check-syntax)
 
 ;; viper settings
@@ -44,6 +44,7 @@
 (fset 'yes-or-no-p 'y-or-n-p) ;; make all yes/no questions y/n
 (desktop-save-mode 1) ;; restore emacs state on startup
 (setq-default indent-tabs-mode nil) ;; use spaces, never tabs for indenting
+(setq x-select-enable-clipboard t) ;; copy/paste uses X's clipboard
 
 ;; colors
 (require 'color-theme)
@@ -52,10 +53,24 @@
 (color-theme-greiner2)
 
 ;; fonts
+(defun my-font () (interactive)
+  ;; failing my-font() silently if the font isn't installed
+  (condition-case nil
+      (set-default-font
+       "-outline-Crisp-normal-r-normal-normal-16-120-96-96-c-*-iso8859-1")
+    (error
+     (message "Topher: init.el failed to load font. It probably isn't installed")
+     (set-face-attribute 'default nil :height 100)
+     nil)))
+(my-font)
 (global-font-lock-mode t)
 (setq font-lock-maximum-decoration t)
 (setq case-fold-search t)
 (setq current-language-environment "Latin-1")
+
+;; color changes required for linux M-x shell
+(autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 ;; uniquify
 (require 'uniquify)
@@ -148,6 +163,11 @@
 ;; topher-specific
 (require 'topher-functions)
 
+;; farsounder specific
+(require 'farsounder)
+(require 'sonasoft)
+(sonasoft-setup-compile)
+
 ;; override viper-keybinding for C-t to open Chrome
 (define-key viper-vi-global-user-map(kbd "C-t")
   (lambda () (interactive)(browse-url "www.google.com")))
@@ -169,6 +189,8 @@
 (define-key my-keys-minor-mode-map (kbd "C-<tab>") 'next-multiframe-window)
 (define-key my-keys-minor-mode-map (kbd "C-S-<tab>")
   'previous-multiframe-window)
+(define-key my-keys-minor-mode-map (kbd "C-S-<iso-lefttab>")
+  'previous-multiframe-window)  ;; linux laptop
 ;; stop emacs from calling suspend-frame on Ctrl-x Ctrl-z
 (define-key my-keys-minor-mode-map (kbd "C-x C-z") 'no-op)
 (define-minor-mode my-keys-minor-mode t 'my-keys-minor-mode-map)
