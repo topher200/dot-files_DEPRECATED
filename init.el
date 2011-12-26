@@ -25,6 +25,7 @@
 (setq column-number-mode t) ;; show column number in mode bar
 (blink-cursor-mode 0) ;; turn off blinking cursor
 (fringe-mode '(0 . 0))  ; == minimal (not sure why 'minimal doesn't work)
+(show-paren-mode 1) ;; hilight matching parens
 
 ;; window keybindings
 (global-set-key (kbd "M-0") 'delete-window)
