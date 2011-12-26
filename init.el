@@ -29,7 +29,7 @@
 
 ;; programming keybindings
 (global-set-key(kbd "C-s") 'save-buffer)
-;; run the check/compile for the current language
+(global-set-key(kbd "<f6>") 'fs-lint)
 (global-set-key(kbd "<f7>") 'check-syntax)
 
 ;; viper settings
