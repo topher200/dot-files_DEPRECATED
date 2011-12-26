@@ -13,6 +13,7 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/evil")
 (require 'evil)  
 (evil-mode 1)
+(define-key evil-normal-state-map (kbd "U") 'undo-tree-redo)
 
 ;; gui settings
 (setq inhibit-startup-message t)
