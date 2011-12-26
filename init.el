@@ -53,7 +53,16 @@
 (color-theme-greiner2)
 
 ;; fonts
-(set-face-attribute 'default nil :height 100)
+(defun my-font () (interactive)
+  ;; failing my-font() silently if the font isn't installed
+  (condition-case nil
+      (set-default-font
+       "-outline-Crisp-normal-r-normal-normal-16-120-96-96-c-*-iso8859-1")
+    (error
+     (message "Topher: init.el failed to load font. It probably isn't installed")
+     (set-face-attribute 'default nil :height 100)
+     nil)))
+(my-font)
 (global-font-lock-mode t)
 (setq font-lock-maximum-decoration t)
 (setq case-fold-search t)
