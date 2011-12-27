@@ -143,10 +143,6 @@
 (add-to-list 'auto-mode-alist '("\\.clj$" . clojure-mode))
 (require 'clojure-test-mode)
 
-;; pianobar.el
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp/pianobar"))
-(autoload 'pianobar "pianobar" nil t)
-
 ;; evan functions: google()
 (require 'evan-functions)
 
