@@ -5,9 +5,16 @@
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
-;; startup with vimpulse
-(require 'vimpulse)
-(setq viper-mode t)
+;; use goto-last-change. loading before evil so it maps it
+(require 'goto-last-change)
+
+;; startup with evil (viper-mode updated)
+(setq-default evil-shift-width 2)
+(add-to-list 'load-path "~/.emacs.d/site-lisp/evil")
+(require 'evil)  
+(evil-mode 1)
+(define-key evil-normal-state-map (kbd "U") 'undo-tree-redo)
+(define-key evil-normal-state-map (kbd "<tab>") 'compilation-next-error)
 
 ;; gui settings
 (setq inhibit-startup-message t)
@@ -19,6 +26,7 @@
 (setq column-number-mode t) ;; show column number in mode bar
 (blink-cursor-mode 0) ;; turn off blinking cursor
 (fringe-mode '(0 . 0))  ; == minimal (not sure why 'minimal doesn't work)
+(show-paren-mode 1) ;; hilight matching parens
 
 ;; window keybindings
 (global-set-key (kbd "M-0") 'delete-window)
@@ -31,11 +39,6 @@
 (global-set-key(kbd "C-s") 'save-buffer)
 (global-set-key(kbd "<f6>") 'fs-lint)
 (global-set-key(kbd "<f7>") 'check-syntax)
-
-;; viper settings
-(setq-default viper-auto-indent t)
-(setq-default viper-case-fold-search t) ;; case-insensitive search
-(setq-default viper-shift-width 2)
 
 ;; misc settings
 (setq-default backup-inhibited t) ;; no backups
@@ -100,16 +103,6 @@
 (setq edit-server-new-frame nil)
 (edit-server-start)
 
-;; use undo-tree instead of the standard undo
-(require 'undo-tree)
-(global-undo-tree-mode)
-(define-key viper-vi-global-user-map "u" 'undo-tree-undo)
-(define-key viper-vi-global-user-map "U" 'undo-tree-redo)
-
-;; use goto-last-change
-(require 'goto-last-change)
-(define-key viper-vi-global-user-map "g;" 'goto-last-change)
-
 ;; use grin-mode
 (require 'grin)
 
@@ -117,9 +110,6 @@
 (require 'etags-select)
 (global-set-key (kbd "M-.") 'etags-select-find-tag)
 (global-set-key (kbd "M-?") 'etags-select-find-tag-at-point)
-
-;; set up hippie-expand. match C-n from Vim
-(define-key viper-insert-global-user-map "\C-n" 'hippie-expand)
 
 ;; c++-mode
 (add-to-list 'auto-mode-alist '("\\.cc$" . c++-mode))
@@ -153,10 +143,6 @@
 (add-to-list 'auto-mode-alist '("\\.clj$" . clojure-mode))
 (require 'clojure-test-mode)
 
-;; pianobar.el
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp/pianobar"))
-(autoload 'pianobar "pianobar" nil t)
-
 ;; evan functions: google()
 (require 'evan-functions)
 
@@ -168,16 +154,20 @@
 (require 'sonasoft)
 (sonasoft-setup-compile)
 
-;; override viper-keybinding for C-t to open Chrome
-(define-key viper-vi-global-user-map(kbd "C-t")
-  (lambda () (interactive)(browse-url "www.google.com")))
+;; set up hippie-expand. match C-n from Vim
+(define-key evil-insert-state-map (kbd "C-n") 'hippie-expand)
+(define-key evil-insert-state-map (kbd "C-S-n") 
+  (lambda () (interactive) (hippie-expand -1)))
+
+;; bind RET (mostly in insert mode) to newline and indent
+(global-set-key (kbd "RET") 'newline-and-indent)
 
 ;; movement control
 ;; attempts to keep cursor in the middle of the screen while scrolling
 (defun move-and-center (scroll-function)
-  (call-interactively 'viper-line-to-middle)
+  (call-interactively 'evil-scroll-line-to-center)
   (call-interactively scroll-function)
-  (call-interactively 'viper-window-middle))
+  (call-interactively 'evil-window-middle))
 
 (defvar my-keys-minor-mode-map (make-keymap))
 ;; Scroll up and down with Ctrl-j/k
@@ -193,5 +183,7 @@
   'previous-multiframe-window)  ;; linux laptop
 ;; stop emacs from calling suspend-frame on Ctrl-x Ctrl-z
 (define-key my-keys-minor-mode-map (kbd "C-x C-z") 'no-op)
+(define-key my-keys-minor-mode-map (kbd "C-t")
+  (lambda () (interactive) (browse-url "www.google.com")))
 (define-minor-mode my-keys-minor-mode t 'my-keys-minor-mode-map)
 (my-keys-minor-mode 1)
