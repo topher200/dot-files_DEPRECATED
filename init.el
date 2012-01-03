@@ -15,6 +15,7 @@
 (evil-mode 1)
 (define-key evil-normal-state-map (kbd "U") 'undo-tree-redo)
 (define-key evil-normal-state-map (kbd "<tab>") 'compilation-next-error)
+(define-key evil-normal-state-map (kbd "Y") "y$")
 
 ;; gui settings
 (setq inhibit-startup-message t)
