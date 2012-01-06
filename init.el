@@ -159,6 +159,13 @@
 (define-key evil-insert-state-map (kbd "C-n") 'hippie-expand)
 (define-key evil-insert-state-map (kbd "C-S-n") 
   (lambda () (interactive) (hippie-expand -1)))
+;; Try to do case-sensitive matching with just hippie expand
+;; From http://stackoverflow.com/a/8723712/131159
+(defadvice hippie-expand (around hippie-expand-case-fold)
+  "Try to do case-sensitive matching (not effective with all functions)."
+  (let ((case-fold-search nil))
+    ad-do-it))
+(ad-activate 'hippie-expand)
 
 ;; bind RET (mostly in insert mode) to newline and indent
 (global-set-key (kbd "RET") 'newline-and-indent)
