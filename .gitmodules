@@ -1,3 +1,4 @@
 [submodule "site-lisp/evil"]
 	path = site-lisp/evil
-	url = git@gitorious.org:~topher200/evil/topher200s-evil.git
+	;; url = git@gitorious.org:~topher200/evil/topher200s-evil.git
+	url = git://gitorious.org/evil/evil.git
