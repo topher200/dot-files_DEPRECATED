@@ -74,7 +74,12 @@
 
 ;; color changes required for linux M-x shell
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
-(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+
+(add-hook 'shell-mode-hook
+          '(lambda () (interactive)
+             'ansi-color-for-comint-mode-on
+             (local-set-key [up] 'comint-previous-input)
+             (local-set-key [down] 'comint-next-input)))
 
 ;; uniquify
 (require 'uniquify)
