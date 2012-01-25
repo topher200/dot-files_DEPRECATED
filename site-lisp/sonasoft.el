@@ -19,7 +19,7 @@
   :type 'string
   :group 'sonasoft)
 
-(defcustom sonasoft-visualstudio  "\"c:/Program Files (x86)/Microsoft Visual Studio 9.0/Common7/IDE/devenv.com\""
+(defcustom sonasoft-visualstudio  "\"c:/Program Files (x86)/Microsoft Visual Studio 10.0/Common7/IDE/devenv.com\""
   "Visual studio binary to build with. Used by `compile'."
   :type 'string
   :group 'sonasoft)
