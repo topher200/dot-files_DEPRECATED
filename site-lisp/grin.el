@@ -6,7 +6,7 @@
   "Command to use to call grin"
   :type 'file)
 
-(defvar grin-command-line (concat grin-command " --emacs "))
+(defvar grin-command-line (concat grin-command " --emacs -D "))
 (defvar grin-history nil)
 (defvar grin-host-defaults-alist nil)
 
