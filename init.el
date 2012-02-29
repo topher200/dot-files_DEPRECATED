@@ -175,6 +175,9 @@
 ;; bind RET (mostly in insert mode) to newline and indent
 (global-set-key (kbd "RET") 'newline-and-indent)
 
+(defun refresh-syntax-highlighting () (interactive)
+  (call-interactively 'font-lock-fontify-buffer))
+
 ;; movement control
 ;; attempts to keep cursor in the middle of the screen while scrolling
 (defun move-and-center (scroll-function)
