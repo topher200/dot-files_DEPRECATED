@@ -137,6 +137,11 @@
 (add-to-list 'auto-mode-alist '("\\.pyx$" . python-mode))
 (setq python-indent 2)
 
+;; lua mode
+(autoload 'lua-mode "lua-mode" "Lua editing mode." t)
+(add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
+(add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
+
 ;; slime support
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp/slime"))
 (eval-after-load "slime" 
