@@ -90,7 +90,6 @@
 (require 'ido)
 (ido-mode t)
 (setq ido-enable-flex-matching t) ;; enable fuzzy matching
-(partial-completion-mode 't)
 (setq ido-default-buffer-method 'selected-window)
 
 ;; use smex mode (ido for M-x)
