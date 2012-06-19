@@ -49,6 +49,7 @@
 (desktop-save-mode 1) ;; restore emacs state on startup
 (setq-default indent-tabs-mode nil) ;; use spaces, never tabs for indenting
 (setq x-select-enable-clipboard t) ;; copy/paste uses X's clipboard
+(setq window-combination-resize t) ;; resize windows on window split/close
 
 ;; colors
 (require 'color-theme)
