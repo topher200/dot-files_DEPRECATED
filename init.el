@@ -5,18 +5,6 @@
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
-;; use goto-last-change. loading before evil so it maps it
-(require 'goto-last-change)
-
-;; startup with evil (viper-mode updated)
-(setq-default evil-shift-width 2)
-(add-to-list 'load-path "~/.emacs.d/site-lisp/evil")
-(require 'evil)  
-(evil-mode 1)
-(define-key evil-normal-state-map (kbd "U") 'undo-tree-redo)
-(define-key evil-normal-state-map (kbd "<tab>") 'compilation-next-error)
-(define-key evil-normal-state-map (kbd "Y") "y$")
-
 ;; gui settings
 (setq inhibit-startup-message t)
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
@@ -108,6 +96,18 @@
 (require 'edit-server)
 (setq edit-server-new-frame nil)
 (edit-server-start)
+
+;; use goto-last-change. loading before evil so it maps it
+(require 'goto-last-change)
+
+;; startup with evil (viper-mode updated)
+(setq-default evil-shift-width 2)
+(add-to-list 'load-path "~/.emacs.d/site-lisp/evil")
+(require 'evil)  
+(evil-mode 1)
+(define-key evil-normal-state-map (kbd "U") 'undo-tree-redo)
+(define-key evil-normal-state-map (kbd "<tab>") 'compilation-next-error)
+(define-key evil-normal-state-map (kbd "Y") "y$")
 
 ;; use grin-mode
 (require 'grin)
