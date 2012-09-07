@@ -206,5 +206,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-x C-z") 'no-op)
 (define-key my-keys-minor-mode-map (kbd "C-t")
   (lambda () (interactive) (browse-url "www.google.com")))
+(define-key my-keys-minor-mode-map (kbd "C-c C-f")
+  (lambda () (interactive) (ff-find-other-file)))
 (define-minor-mode my-keys-minor-mode t 'my-keys-minor-mode-map)
 (my-keys-minor-mode 1)
