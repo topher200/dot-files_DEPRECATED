@@ -5,3 +5,6 @@
 [submodule "site-lisp/emacs-flymake"]
 	path = site-lisp/emacs-flymake
 	url = https://github.com/illusori/emacs-flymake.git
+[submodule "site-lisp/emacs-flymake-cursor"]
+	path = site-lisp/emacs-flymake-cursor
+	url = https://github.com/illusori/emacs-flymake-cursor.git

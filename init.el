@@ -135,6 +135,8 @@
    (add-to-list 'flymake-allowed-file-name-masks
              '("\\.py\\'" flymake-pyflakes-init)))
 (require 'flymake)
+(add-to-list 'load-path "~/.emacs.d/site-lisp/emacs-flymake-cursor")
+(eval-after-load 'flymake '(require 'flymake-cursor))
 
 ;; c++-mode
 (add-to-list 'auto-mode-alist '("\\.cc$" . c++-mode))
