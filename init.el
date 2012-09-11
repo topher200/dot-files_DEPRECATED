@@ -137,6 +137,7 @@
 (require 'flymake)
 (add-to-list 'load-path "~/.emacs.d/site-lisp/emacs-flymake-cursor")
 (eval-after-load 'flymake '(require 'flymake-cursor))
+(add-hook 'find-file-hook 'flymake-find-file-hook)
 
 ;; c++-mode
 (add-to-list 'auto-mode-alist '("\\.cc$" . c++-mode))
