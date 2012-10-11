@@ -135,8 +135,6 @@
   (add-to-list 'flymake-allowed-file-name-masks
                '("\\.py\\'" flymake-python-init)))
 (require 'flymake)
-(delete '("\\.html?\\'" flymake-xml-init) flymake-allowed-file-name-masks)
-(delete '("\\.js\\'" flymake-javascript-init) flymake-allowed-file-name-masks)
 (add-hook 'find-file-hook 'flymake-find-file-hook)
 (add-to-list 'load-path "~/.emacs.d/site-lisp/emacs-flymake-cursor")
 (eval-after-load 'flymake '(require 'flymake-cursor))
