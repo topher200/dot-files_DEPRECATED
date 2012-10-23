@@ -124,20 +124,18 @@
 
 ;; flymake mode
 (add-to-list 'load-path "~/.emacs.d/site-lisp/emacs-flymake")
-(when (load "flymake" t)
-  (defun flymake-python-init ()
-    (let* ((temp-file (flymake-init-create-temp-buffer-copy
-                       'flymake-create-temp-inplace))
-           (local-file (file-relative-name
-                        temp-file
-                        (file-name-directory buffer-file-name))))
-      (list "pychecker"  (list local-file))))
-  (add-to-list 'flymake-allowed-file-name-masks
-               '("\\.py\\'" flymake-python-init)))
+(defun flymake-python-init ()
+  (let* ((temp-file (flymake-init-create-temp-buffer-copy
+                     'flymake-create-temp-inplace))
+         (local-file (file-relative-name
+                      temp-file
+                      (file-name-directory buffer-file-name))))
+    (list "pychecker"  (list local-file))))
 (require 'flymake)
-(add-hook 'find-file-hook 'flymake-find-file-hook)
 (add-to-list 'load-path "~/.emacs.d/site-lisp/emacs-flymake-cursor")
-(eval-after-load 'flymake '(require 'flymake-cursor))
+(require 'flymake-cursor)
+;; (add-hook 'find-file-hook 'flymake-find-file-hook)
+(add-to-list 'flymake-allowed-file-name-masks '("\\.py\\'" flymake-python-init))
 
 ;; c++-mode
 (add-to-list 'auto-mode-alist '("\\.cc$" . c++-mode))
