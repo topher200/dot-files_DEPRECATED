@@ -107,8 +107,6 @@
 (evil-mode 1)
 (define-key evil-normal-state-map (kbd "<tab>") 'compilation-next-error)
 (define-key evil-normal-state-map (kbd "Y") "y$")
-(define-key evil-normal-state-map (kbd "G")
-  (lambda () (interactive) (evil-scroll-line-to-bottom (point-max))))
 
 (add-to-list 'load-path "~/.emacs.d/site-lisp/evil/lib")
 (require 'undo-tree)
