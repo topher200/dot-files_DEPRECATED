@@ -12,12 +12,8 @@ Works with C++ and python files."
   (cond
    ((eq major-mode 'c++-mode)
     (insert "// TODO(topher) project name
-// Copyright 2001-2011 FarSounder Inc.  All rights reserved.
+// Copyright FarSounder Inc. All rights reserved.
 // For internal use only. See NOTICE.txt for details.
-//
-// $LastChangedBy$
-// $Date$
-// $Rev$
 
 "))
    ((eq major-mode 'python-mode)
