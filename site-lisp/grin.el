@@ -29,18 +29,7 @@
 (defun grin-ss ()
   "Runs grin from Sonasoft root"
   (interactive)
-  ; Make sure grep has been initialized
-  (if (>= emacs-major-version 22)
-      (require 'grep)
-    (require 'compile))
-  ; Close STDIN to keep grin from going into filter mode
-  (let ((null-device (format "< %s" null-device))
-        (grep-command (concat "cd d:/dev/sonasoft/src && "
-                              grin-command-line))
-        (grep-history grin-history)
-        (grep-host-defaults-alist grin-host-defaults-alist))
-    (call-interactively 'grep)
-    (setq grin-history             grep-history
-          grin-host-defaults-alist grep-host-defaults-alist)))
+  (let ((default-directory "d:/dev/sonasoft/src"))
+    (call-interactively 'grin)))
 
 (provide 'grin)
