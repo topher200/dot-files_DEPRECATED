@@ -10,7 +10,7 @@
 (defvar grin-history nil)
 (defvar grin-host-defaults-alist nil)
 
-(defun grin ()
+(defun grin-base ()
   "Like ack, but using grin as the default"
   (interactive)
   ; Make sure grep has been initialized
@@ -19,17 +19,25 @@
     (require 'compile))
   ; Close STDIN to keep grin from going into filter mode
   (let ((null-device (format "< %s" null-device))
-        (grep-command grin-command-line)
+        (grep-command grin-command-base)
         (grep-history grin-history)
         (grep-host-defaults-alist grin-host-defaults-alist))
     (call-interactively 'grep)
     (setq grin-history             grep-history
           grin-host-defaults-alist grep-host-defaults-alist)))
 
+
+(defun grin ()
+  "Like ack, but using grin as the default"
+  (interactive)
+  (setq grin-command-base grin-command-line)
+  (call-interactively 'grin-base))
+
 (defun grin-ss ()
   "Runs grin from Sonasoft root"
   (interactive)
-  (let ((default-directory "d:/dev/sonasoft/src"))
-    (call-interactively 'grin)))
+  (setq grin-command-base (concat "cd d:/dev/sonasoft/src && "
+                                   grin-command-line))
+  (call-interactively 'grin-base))
 
 (provide 'grin)
