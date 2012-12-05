@@ -30,14 +30,14 @@
 (defun grin ()
   "Like ack, but using grin as the default"
   (interactive)
-  (setq grin-command-base grin-command-line)
-  (call-interactively 'grin-base))
+  (let ((grin-command-base grin-command-line))
+    (call-interactively 'grin-base)))
 
 (defun grin-ss ()
   "Runs grin from Sonasoft root"
   (interactive)
-  (setq grin-command-base (concat "cd d:/dev/sonasoft/src && "
-                                   grin-command-line))
-  (call-interactively 'grin-base))
+  (let (grin-command-base (concat "cd d:/dev/sonasoft/src && "
+                                  grin-command-line))
+    (call-interactively 'grin-base)))
 
 (provide 'grin)
