@@ -175,6 +175,11 @@
 (add-to-list 'auto-mode-alist '("\\.clj$" . clojure-mode))
 (require 'clojure-test-mode)
 
+;; make evil jump words like Vim
+(modify-syntax-entry ?_ "w" c++-mode-syntax-table)
+(modify-syntax-entry ?_ "w" python-mode-syntax-table)
+
+
 ;; evan functions: google()
 (require 'evan-functions)
 
