@@ -149,6 +149,9 @@
 (add-hook 'c-mode-common-hook 'google-set-c-style)
 
 ;; python-mode
+(add-to-list 'load-path "~/.emacs.d/site-lisp/python-mode")
+(setq py-install-directory "~/.emacs.d/site-lisp/python-mode")
+(require 'python-mode)
 (add-to-list 'auto-mode-alist '("\\.py$" . python-mode))
 (add-to-list 'auto-mode-alist '("\\.pyw$" . python-mode))
 (add-to-list 'auto-mode-alist '("\\.pxd$" . python-mode))
