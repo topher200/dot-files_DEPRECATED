@@ -115,6 +115,12 @@
 ;; use grin-mode
 (require 'grin)
 
+;; use dizzee for spawning processes
+(require 'dizzee)
+(dz-defservice ctrl-gui "python"
+               :args "ctrl_gui.py"
+               :cd "d:/dev/rex-git/python_tools")
+
 ;; set up tags support
 (require 'etags-select)
 (global-set-key (kbd "M-.") 'etags-select-find-tag)
