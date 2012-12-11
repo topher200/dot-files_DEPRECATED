@@ -41,15 +41,4 @@ __notice__ = \"For internal use only. See NOTICE.txt for details.\"
     (compilation-start (concat fs-linter " \"" buffer-file-name "\"")
                        nil (lambda (mode) "*lint*"))))
 
-(defun fs-wiki (page)
-  "Open a page in the FarSounder wiki. Results are shown in a w3m
-session or in the system's web browser depending on user input."
-  (interactive "sOpen page: ")
-  (if (y-or-n-p "Show results in emacs? ")
-      (w3m (concat "http://pvd/wiki/moin.cgi/"
-                   (replace-regexp-in-string " " "%20" page)))
-    (browse-url (concat "http://pvd/fswiki/moin.cgi/"
-                        (replace-regexp-in-string " " "%20"
-                        page)))))
-
 (provide 'farsounder)
