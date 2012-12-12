@@ -92,11 +92,6 @@
 ;; org-mode settings
 (setq org-hide-leading-stars t)
 
-;; start an edit server so Chrome can hook into emacs
-(require 'edit-server)
-(setq edit-server-new-frame nil)
-(edit-server-start)
-
 ;; use goto-last-change. loading before evil so it maps it
 (require 'goto-last-change)
 
