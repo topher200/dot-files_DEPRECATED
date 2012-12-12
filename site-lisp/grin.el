@@ -36,8 +36,8 @@
 (defun grin-ss ()
   "Runs grin from Sonasoft root"
   (interactive)
-  (let (grin-command-base (concat "cd d:/dev/sonasoft/src && "
-                                  grin-command-line))
+  (let ((grin-command-base (concat "cd d:/dev/sonasoft/src && "
+                                   grin-command-line)))
     (call-interactively 'grin-base)))
 
 (provide 'grin)
