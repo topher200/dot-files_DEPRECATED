@@ -142,8 +142,12 @@
 (require 'flymake)
 (add-to-list 'load-path "~/.emacs.d/site-lisp/emacs-flymake-cursor")
 (require 'flymake-cursor)
-;; (add-hook 'find-file-hook 'flymake-find-file-hook)
+(add-hook 'find-hook 'flymake-find-file-hook)
 (add-to-list 'flymake-allowed-file-name-masks '("\\.py\\'" flymake-python-init))
+(add-hook 'compilation-mode-hook
+          '(lambda () (interactive)
+             (local-set-key (kbd "g") nil)
+             (local-set-key (kbd "z") nil)))
 
 ;; c++-mode
 (add-to-list 'auto-mode-alist '("\\.cc$" . c++-mode))
