@@ -10,9 +10,8 @@
 (defvar grin-history nil)
 (defvar grin-host-defaults-alist nil)
 
-(defun grin-base ()
+(defun grin-base (grin-command-base)
   "Like ack, but using grin as the default"
-  (interactive)
   ; Make sure grep has been initialized
   (if (>= emacs-major-version 22)
       (require 'grep)
@@ -30,13 +29,13 @@
   "Runs grin without any modification"
   (interactive)
   (let ((grin-command-base grin-command-line))
-    (call-interactively 'grin-base)))
+    (grin-base grin-command-base)))
 
 (defun grin-ss ()
   "Runs grin from Sonasoft root"
   (interactive)
   (let ((grin-command-base (concat "cd d:/dev/sonasoft/src && "
                                    grin-command-line)))
-    (call-interactively 'grin-base)))
+    (grin-base grin-command-base)))
 
 (provide 'grin)
