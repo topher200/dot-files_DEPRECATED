@@ -26,9 +26,8 @@
     (setq grin-history             grep-history
           grin-host-defaults-alist grep-host-defaults-alist)))
 
-
 (defun grin ()
-  "Like ack, but using grin as the default"
+  "Runs grin without any modification"
   (interactive)
   (let ((grin-command-base grin-command-line))
     (call-interactively 'grin-base)))
