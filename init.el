@@ -246,5 +246,7 @@
   (lambda () (interactive) (browse-url "www.google.com")))
 (define-key my-keys-minor-mode-map (kbd "C-c C-f")
   (lambda () (interactive) (ff-find-other-file)))
+(define-key my-keys-minor-mode-map (kbd "C-x C-k")
+  (lambda () (interactive) (kill-this-buffer)))
 (define-minor-mode my-keys-minor-mode t 'my-keys-minor-mode-map)
 (my-keys-minor-mode 1)
