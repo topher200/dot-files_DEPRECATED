@@ -25,4 +25,9 @@ web browser depending on user input."
                   (buffer-name) "")))
    (t (message "Don't know how to do TOC for this buffer!"))))
 
+(defun ushell (shell-buffer-name)
+  "Unique Shell: Create a shell with a user specified buffer name postfix."
+  (interactive "*sBuffer Name: ")
+  (shell (concat "shell-" shell-buffer-name)))
+
 (provide 'evan-functions)
