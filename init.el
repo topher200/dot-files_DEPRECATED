@@ -192,6 +192,10 @@
           '(lambda ()
              (modify-syntax-entry ?_ "w" python-mode-syntax-table)))
 
+(add-hook 'c-mode-common-hook
+          '(lambda ()
+             (modify-syntax-entry ?_ "w" c-mode-syntax-table)))
+
 ;; evan functions: google()
 (require 'evan-functions)
 
