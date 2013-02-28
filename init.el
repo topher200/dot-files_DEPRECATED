@@ -222,9 +222,6 @@
 ;; bind RET (mostly in insert mode) to newline and indent
 (global-set-key (kbd "RET") 'newline-and-indent)
 
-(defun refresh-syntax-highlighting () (interactive)
-  (call-interactively 'font-lock-fontify-buffer))
-
 ;; movement control
 ;; attempts to keep cursor in the middle of the screen while scrolling
 (defun move-and-center (scroll-function)
@@ -252,5 +249,11 @@
   (lambda () (interactive) (ff-find-other-file)))
 (define-key my-keys-minor-mode-map (kbd "C-x C-k")
   (lambda () (interactive) (kill-this-buffer)))
+(define-key my-keys-minor-mode-map (kbd "C-c C-r")
+  (lambda () (interactive)
+    ;; redo flymake check
+    (call-interactively 'flymake-start-syntax-check)
+    ;; refresh syntax highlightings
+    (call-interactively 'font-lock-fontify-buffer)))
 (define-minor-mode my-keys-minor-mode t 'my-keys-minor-mode-map)
 (my-keys-minor-mode 1)
