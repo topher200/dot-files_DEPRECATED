@@ -30,4 +30,9 @@ web browser depending on user input."
   (interactive "*sBuffer Name: ")
   (shell (concat "shell-" shell-buffer-name)))
 
+(defun named-shell ()
+  "Named Shell: Create a shell with the name of the current buffer."
+  (interactive)
+  (shell (concat "shell-" (buffer-name))))
+
 (provide 'evan-functions)
