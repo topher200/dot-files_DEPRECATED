@@ -174,18 +174,6 @@
 (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
 (add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
 
-;; slime support
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp/slime"))
-(eval-after-load "slime" 
-  '(progn (slime-setup '(slime-repl))))
-(require 'slime)
-(slime-setup)
-
-;; clojure-mode
-(require 'clojure-mode)
-(add-to-list 'auto-mode-alist '("\\.clj$" . clojure-mode))
-(require 'clojure-test-mode)
-
 ;; make evil jump words like Vim
 (modify-syntax-entry ?_ "w" c++-mode-syntax-table)
 (add-hook 'python-mode-hook
