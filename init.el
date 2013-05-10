@@ -101,6 +101,7 @@
 (require 'evil)  
 (evil-mode 1)
 (define-key evil-normal-state-map (kbd "<tab>") 'compilation-next-error)
+(define-key evil-normal-state-map (kbd "C-S-o") 'evil-jump-forward)
 (define-key evil-normal-state-map (kbd "Y") "y$")
 
 ;; use grin-mode
