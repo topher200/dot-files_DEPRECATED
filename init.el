@@ -103,10 +103,6 @@
 (define-key evil-normal-state-map (kbd "<tab>") 'compilation-next-error)
 (define-key evil-normal-state-map (kbd "Y") "y$")
 
-(add-to-list 'load-path "~/.emacs.d/site-lisp/evil/lib")
-(require 'undo-tree)
-(define-key evil-normal-state-map (kbd "U") 'undo-tree-redo)
-
 ;; use grin-mode
 (require 'grin)
 
