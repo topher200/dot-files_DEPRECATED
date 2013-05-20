@@ -176,6 +176,9 @@
 (add-hook 'python-mode-hook
           '(lambda ()
              (modify-syntax-entry ?_ "w" python-mode-syntax-table)))
+(add-hook 'ruby-mode-hook
+          '(lambda ()
+             (modify-syntax-entry ?_ "w" ruby-mode-syntax-table)))
 
 (add-hook 'c-mode-common-hook
           '(lambda ()
