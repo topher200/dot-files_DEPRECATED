@@ -108,19 +108,10 @@
 (require 'grin)
 
 ;; use dizzee for spawning processes
-(add-to-list 'load-path "~/.emacs.d/site-lisp/dizzee")
 (require 'dizzee)
-(dz-defservice rexcomm-controller "python"
-               :args ("-u" "rexcomm_controller.py")
+(dz-defservice ctrl-gui "python"
+               :args "ctrl_gui.py"
                :cd "d:/dev/rex-git/python_tools")
-(dz-defservice rexcomm-recorder "python"
-               :args ("-u" "rexcomm_recorder.py" "--serial" "NEW_SINGLE_REX")
-               :cd "d:/dev/rex-git/python_tools")
-(dz-defservice-group rexcomm-master (rexcomm-recorder rexcomm-controller))
-(dz-defservice shell-rex "cmd"
-               :cd "d:/dev/rex-git/python_tools")
-(dz-defservice shell-sonasoft "cmd"
-               :cd "d:/dev/sonasoft")
 
 ;; set up tags support
 (require 'etags-select)
