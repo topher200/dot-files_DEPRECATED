@@ -8,6 +8,3 @@
 [submodule "site-lisp/emacs-flymake-cursor"]
 	path = site-lisp/emacs-flymake-cursor
 	url = https://github.com/illusori/emacs-flymake-cursor.git
-[submodule "site-lisp/dizzee"]
-	path = site-lisp/dizzee
-	url = https://github.com/davidmiller/dizzee.git
