@@ -237,3 +237,11 @@
     (call-interactively 'font-lock-fontify-buffer)))
 (define-minor-mode my-keys-minor-mode t 'my-keys-minor-mode-map)
 (my-keys-minor-mode 1)
+
+;; from http://stackoverflow.com/questions/7349487/emacs-different-tab-indent-settings-in-different-modes
+(defadvice whitespace-cleanup (around whitespace-cleanup-indent-tab
+                                      activate)
+  "Fix whitespace-cleanup indent-tabs-mode bug"
+  (let ((whitespace-indent-tabs-mode indent-tabs-mode)
+        (whitespace-tab-width tab-width))
+    ad-do-it))
