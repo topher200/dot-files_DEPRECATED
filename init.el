@@ -156,6 +156,10 @@
 (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
 (add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
 
+;; comment .ini files with ";"
+(add-hook 'conf-space-mode-hook (lambda () (setq comment-start "; "
+                                                 comment-end "")))
+
 ;; make evil jump words like Vim
 (modify-syntax-entry ?_ "w" c++-mode-syntax-table)
 (add-hook 'python-mode-hook
