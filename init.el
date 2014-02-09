@@ -130,6 +130,12 @@
           '(lambda () (interactive)
              (local-set-key (kbd "g") nil)
              (local-set-key (kbd "z") nil)))
+(add-hook 'python-mode-hook
+          '(lambda ()
+             (define-key python-mode-map "\C-cn" 'flymake-goto-next-error)))
+(add-hook 'python-mode-hook
+          '(lambda ()
+             (define-key python-mode-map "\C-cp" 'flymake-goto-prev-error)))
 
 ;; c++-mode
 (add-to-list 'auto-mode-alist '("\\.cc$" . c++-mode))
