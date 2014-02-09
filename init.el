@@ -157,6 +157,9 @@
 (add-to-list 'auto-mode-alist '("\\.pyx$" . python-mode))
 (setq python-indent 2)
 
+;; go-mode
+(add-to-list 'auto-mode-alist '("\\.go$" . go-mode))
+
 ;; lua mode
 (autoload 'lua-mode "lua-mode" "Lua editing mode." t)
 (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
