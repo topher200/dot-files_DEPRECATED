@@ -249,3 +249,9 @@
   (let ((whitespace-indent-tabs-mode indent-tabs-mode)
         (whitespace-tab-width tab-width))
     ad-do-it))
+
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/"))
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/"))
