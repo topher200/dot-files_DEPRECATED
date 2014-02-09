@@ -120,7 +120,7 @@
          (local-file (file-relative-name
                       temp-file
                       (file-name-directory buffer-file-name))))
-    (list "~/.emacs.d/pycheckers.bat"  (list local-file))))
+    (list "epylint" (list local-file))))
 (require 'flymake)
 (add-to-list 'load-path "~/.emacs.d/site-lisp/emacs-flymake-cursor")
 (require 'flymake-cursor)
