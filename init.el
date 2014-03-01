@@ -166,6 +166,12 @@
 (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
 (add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
 
+;; clojure mode
+(require 'clojure-mode)
+(add-to-list 'auto-mode-alist '("\\.clj$" . clojure-mode))
+(add-hook 'clojure-mode-hook 'paredit-mode)
+(require 'clojure-test-mode)
+
 ;; comment .ini files with ";"
 (add-hook 'conf-space-mode-hook (lambda () (setq comment-start "; "
                                                  comment-end "")))
