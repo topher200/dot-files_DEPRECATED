@@ -5,6 +5,12 @@
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
+(require 'package)
+(setq package-archives
+      '(("elpa" . "http://tromey.com/elpa/")
+        ("melpa" . "http://melpa.milkbox.net/packages/")
+        ("marmalade" . "http://marmalade-repo.org/packages/")))
+
 ;; gui settings
 (setq inhibit-startup-message t)
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
@@ -264,9 +270,3 @@
   (let ((whitespace-indent-tabs-mode indent-tabs-mode)
         (whitespace-tab-width tab-width))
     ad-do-it))
-
-(require 'package)
-(setq package-archives
-      '(("elpa" . "http://tromey.com/elpa/")
-        ("melpa" . "http://melpa.milkbox.net/packages/")
-        ("marmalade" . "http://marmalade-repo.org/packages/")))
