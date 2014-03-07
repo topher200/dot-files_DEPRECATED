@@ -173,7 +173,6 @@
 
 ;; clojure mode
 (add-to-list 'auto-mode-alist '("\\.clj$" . clojure-mode))
-(add-hook 'clojure-mode-hook 'paredit-mode)
 
 ;; comment .ini files with ";"
 (add-hook 'conf-space-mode-hook (lambda () (setq comment-start "; "
