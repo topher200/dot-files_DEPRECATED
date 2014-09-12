@@ -10,6 +10,16 @@
       '(("elpa" . "http://tromey.com/elpa/")
         ("melpa" . "http://melpa.milkbox.net/packages/")
         ("marmalade" . "http://marmalade-repo.org/packages/")))
+(setq required-packages
+      '(flx))
+(defun install-missing-packages ()
+  "Install all required packages that haven't been installed."
+  (interactive)
+  (mapc (lambda (package)
+          (unless (package-installed-p package)
+            (package-install package)))
+        required-packages)
+  (message "Installed all missing packages!"))
 
 ;; gui settings
 (setq inhibit-startup-message t)
