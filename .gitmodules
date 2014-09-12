@@ -1,7 +1,3 @@
-[submodule "site-lisp/evil"]
-	path = site-lisp/evil
-	;; url = git@gitorious.org:~topher200/evil/topher200s-evil.git
-	url = git://gitorious.org/evil/evil.git
 [submodule "site-lisp/emacs-flymake"]
 	path = site-lisp/emacs-flymake
 	url = git@github.com:topher200/emacs-flymake.git
