@@ -3,3 +3,5 @@ auto-save-list
 .emacs.desktop.lock
 .org-id-locations
 elpa
+projectile-bookmarks.eld
+projectile.cache
