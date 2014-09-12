@@ -12,7 +12,8 @@
         ("marmalade" . "http://marmalade-repo.org/packages/")))
 (setq required-packages
       '(flx-ido
-        evil))
+        evil
+        projectile))
 (defun install-missing-packages ()
   "Install all required packages that haven't been installed."
   (interactive)
@@ -109,6 +110,9 @@
 (require 'smex)
 (smex-initialize)
 (global-set-key (kbd "M-x") 'smex)
+
+;; use projectile mode (project-wide file finding and tools)
+(projectile-global-mode)
 
 ;; provide keep-end mode (keeps cursor at end of buffer)
 (require 'keep-end)
