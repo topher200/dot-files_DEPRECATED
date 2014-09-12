@@ -11,7 +11,7 @@
         ("melpa" . "http://melpa.milkbox.net/packages/")
         ("marmalade" . "http://marmalade-repo.org/packages/")))
 (setq required-packages
-      '(flx))
+      '(flx-ido))
 (defun install-missing-packages ()
   "Install all required packages that haven't been installed."
   (interactive)
@@ -94,8 +94,14 @@
 ;; use ido mode
 (require 'ido)
 (ido-mode t)
+(ido-everywhere t)
 (setq ido-enable-flex-matching t) ;; enable fuzzy matching
 (setq ido-default-buffer-method 'selected-window)
+
+;; use flx fuzzy matching for ido mode
+(require 'flx-ido)
+(flx-ido-mode t)
+(setq ido-use-faces nil)
 
 ;; use smex mode (ido for M-x)
 (require 'smex)
