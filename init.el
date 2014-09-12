@@ -20,6 +20,7 @@
             (package-install package)))
         required-packages)
   (message "Installed all missing packages!"))
+(package-initialize)
 
 ;; gui settings
 (setq inhibit-startup-message t)
