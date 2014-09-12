@@ -11,7 +11,8 @@
         ("melpa" . "http://melpa.milkbox.net/packages/")
         ("marmalade" . "http://marmalade-repo.org/packages/")))
 (setq required-packages
-      '(flx-ido))
+      '(flx-ido
+        evil))
 (defun install-missing-packages ()
   "Install all required packages that haven't been installed."
   (interactive)
@@ -120,7 +121,6 @@
 
 ;; startup with evil (viper-mode updated)
 (setq-default evil-shift-width 2)
-(add-to-list 'load-path "~/.emacs.d/site-lisp/evil")
 (require 'evil)  
 (evil-mode 1)
 (define-key evil-normal-state-map (kbd "<tab>") 'compilation-next-error)
