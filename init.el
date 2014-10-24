@@ -100,6 +100,7 @@
 (ido-everywhere t)
 (setq ido-enable-flex-matching t) ;; enable fuzzy matching
 (setq ido-default-buffer-method 'selected-window)
+(setq ido-max-directory-size 1000000)  ;; remove [Too Big] warning for C-x C-f
 
 ;; use flx fuzzy matching for ido mode
 (require 'flx-ido)
