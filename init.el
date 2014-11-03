@@ -134,6 +134,24 @@
 (define-key evil-normal-state-map (kbd "C-S-o") 'evil-jump-forward)
 (define-key evil-normal-state-map (kbd "Y") "y$")
 
+(defadvice
+    evil-search-forward
+    (after evil-search-forward-recenter activate)
+    (recenter))
+(ad-activate 'evil-search-forward)
+
+(defadvice
+    evil-search-next
+    (after evil-search-next-recenter activate)
+    (recenter))
+(ad-activate 'evil-search-next)
+
+(defadvice
+    evil-search-previous
+    (after evil-search-previous-recenter activate)
+    (recenter))
+(ad-activate 'evil-search-previous)
+
 (require 'evil-numbers)
 (global-set-key (kbd "C-c =") 'evil-numbers/inc-at-point)
 (global-set-key (kbd "C-c -") 'evil-numbers/dec-at-point)
