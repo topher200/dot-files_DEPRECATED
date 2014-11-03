@@ -13,6 +13,7 @@
 (setq required-packages
       '(flx-ido
         evil
+        evil-numbers
         projectile))
 (defun install-missing-packages ()
   "Install all required packages that haven't been installed."
@@ -131,6 +132,10 @@
 (define-key evil-normal-state-map (kbd "<tab>") 'compilation-next-error)
 (define-key evil-normal-state-map (kbd "C-S-o") 'evil-jump-forward)
 (define-key evil-normal-state-map (kbd "Y") "y$")
+
+(require 'evil-numbers)
+(global-set-key (kbd "C-c =") 'evil-numbers/inc-at-point)
+(global-set-key (kbd "C-c -") 'evil-numbers/dec-at-point)
 
 ;; use grin-mode
 (require 'grin)
