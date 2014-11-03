@@ -9,7 +9,7 @@
 (setq package-archives
       '(("elpa" . "http://tromey.com/elpa/")
         ("melpa" . "http://melpa.milkbox.net/packages/")
-        ("marmalade" . "http://marmalade-repo.org/packages/")))
+        ("marmalade" . "https://marmalade-repo.org/packages/")))
 (setq required-packages
       '(flx-ido
         evil
