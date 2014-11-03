@@ -115,6 +115,7 @@
 
 ;; use projectile mode (project-wide file finding and tools)
 (projectile-global-mode)
+(global-set-key (kbd "C-x f") 'projectile-find-file-in-known-projects)
 
 ;; provide keep-end mode (keeps cursor at end of buffer)
 (require 'keep-end)
