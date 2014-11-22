@@ -14,7 +14,8 @@
       '(flx-ido
         evil
         evil-numbers
-        projectile))
+        projectile
+        coffee-mode))
 (defun install-missing-packages ()
   "Install all required packages that haven't been installed."
   (interactive)
