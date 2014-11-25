@@ -46,10 +46,7 @@
 (global-set-key (kbd "M-=") 'balance-windows)
 
 ;; programming keybindings
-(global-set-key (kbd "C-s")
-                (lambda () (interactive)
-                  (save-buffer)
-                  (desktop-save-in-desktop-dir)))
+(global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key(kbd "<f6>") 'fs-lint)
 (global-set-key(kbd "<f7>") 'check-syntax)
 
@@ -317,3 +314,5 @@
   (let ((whitespace-indent-tabs-mode indent-tabs-mode)
         (whitespace-tab-width tab-width))
     ad-do-it))
+
+(add-hook 'projectile-idle-timer-hook 'desktop-save-in-desktop-dir)
