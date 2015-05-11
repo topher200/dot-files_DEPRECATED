@@ -221,8 +221,11 @@
 ;; clojure mode
 (add-to-list 'auto-mode-alist '("\\.clj$" . clojure-mode))
 
-;; comment .ini files with ";"
+;; comment .ini files with "; "
 (add-hook 'conf-space-mode-hook (lambda () (setq comment-start "; "
+                                                 comment-end "")))
+;; comment .bat files with ":: "
+(add-hook 'conf-space-mode-hook (lambda () (setq comment-start ":: "
                                                  comment-end "")))
 
 ;; make evil jump words like Vim
