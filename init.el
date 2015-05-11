@@ -307,6 +307,7 @@
     (call-interactively 'flymake-start-syntax-check)
     ;; refresh syntax highlightings
     (call-interactively 'font-lock-fontify-buffer)))
+(define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
 (define-minor-mode my-keys-minor-mode t 'my-keys-minor-mode-map)
 (my-keys-minor-mode 1)
 
