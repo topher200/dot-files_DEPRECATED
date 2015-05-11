@@ -15,6 +15,8 @@
         evil
         evil-numbers
         projectile
+        ace-jump-mode
+        dos
         coffee-mode))
 (defun install-missing-packages ()
   "Install all required packages that haven't been installed."
