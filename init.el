@@ -154,8 +154,8 @@
 (ad-activate 'evil-search-previous)
 
 (require 'evil-numbers)
-(global-set-key (kbd "C-c =") 'evil-numbers/inc-at-point)
-(global-set-key (kbd "C-c -") 'evil-numbers/dec-at-point)
+(global-set-key (kbd "C-c =") 'evil-numbers/inc-at-pt)
+(global-set-key (kbd "C-c -") 'evil-numbers/dec-at-pt)
 
 ;; use grin-mode
 (require 'grin)
