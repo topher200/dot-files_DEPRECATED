@@ -10,6 +10,7 @@
       '(("elpa" . "http://tromey.com/elpa/")
         ("melpa" . "http://melpa.milkbox.net/packages/")
         ("marmalade" . "https://marmalade-repo.org/packages/")))
+;; add required packages here
 (setq required-packages
       '(flx-ido
         evil
