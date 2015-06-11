@@ -323,3 +323,5 @@
     ad-do-it))
 
 (add-hook 'projectile-idle-timer-hook 'desktop-save-in-desktop-dir)
+
+(setq max-lisp-eval-depth 10000)
